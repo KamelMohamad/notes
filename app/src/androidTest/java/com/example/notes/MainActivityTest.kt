@@ -36,4 +36,19 @@ class MainActivityTest {
         testRule.onNodeWithText("No notes saved yet").assertIsDisplayed()
     }
 
+    @Test
+    fun when_lauching_the_app_with_1_note_saved_I_can_see_the_note() {
+       testRule.setContent {
+              NoteListScreen()
+       }
+        testRule.onNodeWithTag("Notes list item").assertIsDisplayed()
+    }
+
+    @Test
+    fun when_1_note_or_more_are_saved_te_no_notes_saved_yet_text_should_be_invisible() {
+        testRule.setContent {
+            NoteListScreen(noteList = listOf("First note"))
+        }
+        testRule.onNodeWithText("No notes saved yet").assertDoesNotExist()
+    }
 }
