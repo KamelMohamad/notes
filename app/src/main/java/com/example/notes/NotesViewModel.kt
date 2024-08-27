@@ -7,4 +7,8 @@ import kotlinx.coroutines.flow.asStateFlow
 class NotesViewModel: ViewModel() {
     private val state = MutableStateFlow(emptyList<Note>())
     val stateFlow = state.asStateFlow()
+
+    fun loadNotes(){
+
+    }
 }
