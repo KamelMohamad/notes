@@ -47,5 +47,6 @@ class MainActivityTest {
             testRule.onNodeWithText("No notes saved yet").assertDoesNotExist()
         }
     }
+
 }
 
